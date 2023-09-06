@@ -8,33 +8,33 @@ import Produtos from './routes/Produtos/index.jsx'
 import Error from './routes/Error/index.jsx'
 import EditarProduto from './routes/EditarProdutos/index.jsx'
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <RouterProvider router={router}/>
-  </React.StrictMode>,
-)
-
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App/>,
-    errorElement: <Error/>,
-    children:[
+    errorElement: <Error />,
+    children: [
       {
         path:"/",
-        element: <Home/>
+        element: <Home />
 
       },
       {
         path:"/produtos",
-        element: <Produtos/>
+        element: <Produtos />
 
       },
       {
         path:"/produtos/editar/:id",
-        element: <EditarProduto/>
+        element: <EditarProduto />
 
       },
     ]
   }
 ])
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <RouterProvider router={router}/>
+  </React.StrictMode>,
+)
